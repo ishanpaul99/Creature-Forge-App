@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creature Forge</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="creature-forge.png">
+</head>
+<body>
+  <div class="scene">
+    <div class="particles"></div>
+    <div class="fog"></div>
+  </div>
+
+  <header class="navbar" id="navbar">
+    <div class="brand">
+      <img src="creature-forge.png" alt="logo" width="100px">
+      <div>
+        <span class="brand-name">Creature Forge</span>
+        <span class="brand-tag">Mystic Creature Alchemy</span>
+      </div>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#forge">Forge</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">Fantasy Laboratory</p>
+        <h1>Forge Legendary Creatures.</h1>
+        <p class="hero-text">Combine traits, elements, and habitats to create unique fantasy beasts.</p>
+        <a class="cta-button" href="#forge">Start Forging</a>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <span class="hero-badge">Arcane Forge</span>
+          <div class="hero-glow"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <h2>Forge Features</h2>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Unlimited Creature Combinations</h3>
+          <p>Mix and match heads, bodies, elements, and habitats for endless magical beasts.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Procedural Name Generation</h3>
+          <p>Dynamic names emerge from your choices, creating unique legendary beings.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Unique Creature Lore</h3>
+          <p>Every forged creature receives its own epic story and powerful origin.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="forge" id="forge">
+      <div class="section-header">
+        <h2>Creature Forge</h2>
+        <p>Shape the next legendary beast with arcane precision.</p>
+      </div>
+      <div class="forge-grid">
+        <div class="forge-panel">
+          <div class="field-group">
+            <label for="headType">Head Type</label>
+            <select id="headType">
+              <option>Dragon</option>
+              <option>Wolf</option>
+              <option>Eagle</option>
+              <option>Lion</option>
+              <option>Serpent</option>
+              <option>Phoenix</option>
+              <option>Bear</option>
+              <option>Tiger</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="bodyType">Body Type</label>
+            <select id="bodyType">
+              <option>Dragon</option>
+              <option>Wolf</option>
+              <option>Lion</option>
+              <option>Panther</option>
+              <option>Horse</option>
+              <option>Griffin</option>
+              <option>Bear</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="element">Element</label>
+            <select id="element">
+              <option>Fire</option>
+              <option>Water</option>
+              <option>Ice</option>
+              <option>Lightning</option>
+              <option>Earth</option>
+              <option>Nature</option>
+              <option>Shadow</option>
+              <option>Light</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="habitat">Habitat</label>
+            <select id="habitat">
+              <option>Mountains</option>
+              <option>Forest</option>
+              <option>Desert</option>
+              <option>Volcano</option>
+              <option>Ocean</option>
+              <option>Tundra</option>
+              <option>Sky Realm</option>
+              <option>Ancient Ruins</option>
+            </select>
+          </div>
+
+          <div class="forge-actions">
+            <button id="forgeButton" class="primary-button">⚡ Forge Creature</button>
+            <button id="randomButton" class="secondary-button">🎲 Random Creature</button>
+          </div>
+        </div>
+
+        <div class="result-card" id="resultCard">
+          <div class="result-top">
+            <span class="result-label">Creature Card</span>
+            <span class="result-badge" id="rarityBadge">Legendary</span>
+          </div>
+          <h3 id="creatureName">Awaiting Creation</h3>
+          <div class="stat-grid">
+            <div class="stat-block"><span>Rarity</span><strong id="rarityText">—</strong></div>
+            <div class="stat-block"><span>Power</span><strong id="powerLevel">—</strong></div>
+            <div class="stat-block"><span>Element</span><strong id="elementText">—</strong></div>
+            <div class="stat-block"><span>Habitat</span><strong id="habitatText">—</strong></div>
+            <div class="stat-block"><span>Class</span><strong id="classText">—</strong></div>
+          </div>
+          <p class="creature-lore" id="creatureLore">Combine your selections and let the forge spark new legends.</p>
+          <div class="card-footer">
+            <span class="power-tier" id="powerTier">Tier C</span>
+            <button id="favoriteButton" class="favorite-button">☆ Favorite</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bestiary" id="bestiary">
+      <div class="section-header">
+        <h2>Bestiary</h2>
+        <p>Legendary creatures you have forged are preserved here.</p>
+      </div>
+      <div class="comparison-cards">
+        <article class="compare-card">
+          <h4>Strongest Creature</h4>
+          <p id="strongestCreature">No entries yet</p>
+        </article>
+        <article class="compare-card">
+          <h4>Rarest Creature</h4>
+          <p id="rarestCreature">No entries yet</p>
+        </article>
+        <article class="compare-card">
+          <h4>Average Power</h4>
+          <p id="averagePower">—</p>
+        </article>
+      </div>
+      <div class="bestiary-list" id="bestiaryList"></div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-panel">
+        <h2>About Creature Forge</h2>
+        <p>Creature Forge is a fantasy creature generator that allows users to combine traits, elements, and habitats to create unique beasts complete with names, lore, rarity, and power ratings.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p>Every legend begins with a creation.</p>
+    <p>&copy; <span id="currentYear"></span> Creature Forge</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
